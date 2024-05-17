@@ -1,0 +1,824 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+   --black: #333533;
+    --darkGrey: #545454;
+    --gold: #A78951;
+    --lato: "Lato", sans-serif;
+    --merriweather: "Merriweather", serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::selection {
+  color: #FFFFFF;
+  background-color: var(--gold);
+}
+body {
+    background-color: #FFFFFF;
+    line-height: 1.2;
+    font-family: var(--lato);
+    color: var(--darkGrey);
+    letter-spacing: 1.1px;
+    scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+ul li::marker {
+  color: var(--gold);
+}
+
+/* navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+.logo img {
+    height: 60px;
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+.nav-links {
+    margin-right: 3rem;
+    display: flex;
+  }
+  
+  .nav-links li {
+    position: relative;
+    margin-right: 1.6rem;
+    padding: 0 10px;
+  }
+  
+  .nav-links li a {
+    color: var(--darkGrey);
+    font-family: var(--merriweather);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-links li a:hover {
+    color: var(--gold);
+  }
+
+  .quote-button,
+  .read-more,
+  .contact {
+    background: rgba(167, 137, 81, 0.9);
+    margin-right: 3rem;
+    color: #ffffff;
+    font-family: var(--merriweather);
+    letter-spacing: 1.2px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .quote-button:hover,
+  .read-more:hover,
+  .social-icons img:hover,
+  .form-control button:hover,
+  .contact:hover  {
+    background: var(--gold);
+  }
+
+  /* mobile menu styles */
+
+  .menu-toggle .bar{
+    width: 25px;
+    height: 3px;
+    background-color: #3f3f3f;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu-toggle {
+    justify-self: end;
+    margin-right: 25px;
+    display: none;
+  }
+  
+  .menu-toggle:hover{
+    cursor: pointer;
+  }
+  
+  .menu-toggle.active .bar:nth-child(2){
+    transition: all 0.7s ease;
+    width:0;
+  }
+  
+  .menu-toggle.active .bar:nth-child(1){
+    transform: rotate(-45deg) translate(-5px,6px);
+  }
+  
+  .menu-toggle.active .bar:nth-child(3){
+    transform: rotate(45deg) translate(-5px,-6px);
+  }
+
+  /* HEADER STYLES */
+
+  .header {
+    position: relative;
+    height: 88vh; 
+    background-image: url('../Media/header-image.jpeg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  z-index: 1;
+}
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  font-family: var(--merriweather);
+  margin-bottom: 1rem;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ABOUT US STYLES */
+ #about-us, 
+ #services,
+ #our-values,
+ #why-us,
+ #join-us,
+ #solutions{
+  padding: 3rem;
+ }
+ .section-header h3,
+ #about-us h1,
+ #services h1,
+ #working-process h1 {
+   margin: 1.5rem 0;
+   color: var(--black);
+   text-align: center;
+   font-family: var(--merriweather);
+ }
+ .section-header h3::after {
+  content:'';
+   display:block; 
+   width: 50px; 
+   height:4px;
+   background:var(--gold);
+   margin:0 auto;
+   margin-top:10px;
+   border-radius:3px;
+ }
+.more-info {
+  display: flex;
+  gap: 10px;
+  margin-top: 2.5rem;
+}
+.mission,
+.vision,
+#about-us p {
+  text-align: start;
+}
+.mission,
+.vision {
+  flex: 1;
+  padding-right: 3rem;
+}
+.mission h3,
+.vision h3 {
+  border-radius: 3px;
+  border-left: 4px solid var(--gold);
+  padding-left: 7px;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+  font-family: var(--merriweather);
+}
+
+.read-more{
+  display: block;
+  margin: 3rem auto;
+  transition: all 0.1s ease;
+}
+ 
+ /* SERVICES STYLES */
+ #services,
+ #our-values,
+ #join-us {
+  background: #f5f5ef;
+ }
+ .services-container,
+ .values-container {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px; 
+}
+
+.service-card,
+.value-item {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+.service-card:hover,
+.value-item:hover,
+.solution:hover {
+  background-color: rgba(167, 137, 81, 0.1);
+}
+.service-card img,
+.solution img {
+  margin-bottom: 10px;
+}
+.service-card h3,
+.solution h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: var(--merriweather);
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--darkGrey);
+}
+
+/* CSS for Working Process Section */
+ #working-process {
+  background-image: url(../Media/solar-panels.jpg);
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 0.6rem;
+ }
+ #working-process .overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+ }
+ #working-process h3,
+ #working-process h1,
+ #working-process .process-steps {
+  position: relative;
+  z-index: 2;
+ }
+
+ #working-process h3 {
+  color: var(--gold);
+ }
+ #working-process h1,
+ .head-page p {
+  color: #FFFFFF;
+ }
+ .process-steps {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   gap: 20px;
+   padding: 20px;
+ }
+ .step {
+   flex: 0 1 calc(30% - 20px);
+   padding: 20px;
+   background: rgba(167, 137, 81, 0.2);
+   border-radius: 3px 30px;
+   color: #FFFFFF;
+ }
+ .step-head {
+  display: flex;
+  margin-bottom: 15px;
+ }
+
+ .step-head h3 {
+  display: flex;
+  gap: 10px;
+ }
+ .step-head span {
+    max-height: 30px;
+    color: #ffffff;
+    border-radius: 10px 0px 10px;
+    padding: 7px;
+    background: var(--gold);
+ }
+ .step-head img {
+  height: 25px;
+  margin-left: 10px;
+ }
+
+ /* styles for contact section */
+  #contact-us {
+    background-color: #f9f9f9;
+    padding: 3rem;
+  }
+  .contact-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 3rem;
+
+  }
+ 
+  .contact-details h2,
+  .contact-details h4 {
+    font-family: var(--merriweather);
+    color: var(--black);
+  }
+  .contact-details p{
+    margin-top: 5px;
+  }
+  .contact-info {
+    margin-top: 2rem;
+  }
+  .contact-info .icon {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  .contact-info .icon img {
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    margin-right: 7px;
+    padding: 9px;
+    background: var(--gold);
+  }
+  .social-icons{
+    margin-top: 2rem;
+  }
+  .social-icons h4 {
+    margin-bottom: 0.6rem;
+  }
+  .social-icons img {
+    background: rgba(167, 137, 81, 0.9);
+    border-radius: 10px;
+    padding: 7px;
+    margin-right: 0.3rem;
+    transition: all 0.2s ease;
+  }
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+  }
+  .form-control {
+    margin-bottom: 10px;
+  }
+  .form-control label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-control input,
+  .form-control textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+  }
+  .form-control input:focus,
+  .form-control textarea:focus {
+    outline: none;
+    border-color: var(--darkGrey);
+  }
+  .form-control button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: rgba(167, 137, 81, 0.9);
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+
+  #map {
+    position: relative;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
+  }
+  #map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* styles for footer section */
+
+  #footer {
+  background-color: var(--black);
+  color: #FFFFFF;
+  text-align: left;
+  padding: 3rem 1rem 0.2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+}
+#footer h3,
+#footer .social-icons h4 {
+  font-family: var(--merriweather);
+  color: var(--gold);
+}
+.footer-section {
+  margin: 10px;
+  flex: 1;
+  min-width: 250px;
+}
+.footer-section li {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+.footer-section li a{
+   color: #FFFFFF;
+   transition: all 0.2s ease;
+}
+.footer-section li a:hover {
+  color: var(--gold);
+}
+.footer-section li a::before {
+  content: '•';
+  color: #FFFFFF;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+#footer .logo img {
+  max-width: 85%;
+  height: auto;
+}
+#footer .copyright p {
+  margin: 0;
+  padding: 0;
+  color: #aaa;
+  text-align: center;
+}
+
+#footer .copyright p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+/* STYLES FOR ABOUT US PAGE */
+#main-header {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  text-align: center;
+  background: url("../Media/solar-panels.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+.head-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.head-page h1 {
+  font-family: var(--merriweather);
+  font-weight: 500;
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+
+.values-container {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+.value-item {
+  padding: 15px 10px;
+}
+.why-us-list {
+  margin-top: 1rem;
+}
+.why-us-list p{
+  margin-bottom: 5px;
+}
+.why-us-list p {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+.company-name {
+  display: contents;
+}
+.company-name,
+.check-sign {
+  color: var(--gold);
+  font-weight: bold;
+}
+.check-sign {
+  font-size: 1.3rem;
+}
+#join-us {
+  text-align: center;
+}
+#join-us p{
+  margin-bottom: 1rem;
+}
+
+ /* styles for solutions page */
+ #solutions p {
+  text-align: center;
+ }
+ .solutions-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 30px;
+  margin-top: 2rem;
+ }
+ .solution {
+  text-align: center;
+  flex-basis: 20%;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+ }
+ .solution img {
+  height: 40px;
+ }
+ .solution-systems {
+  background-color: #f9f9f9;
+  padding-bottom: 3rem;
+  margin-top: 3rem;
+ }
+ .solution-system {
+  padding: 3rem 4rem 0;
+ }
+
+ .contact {
+  display: block;
+  margin: 0 auto;
+ }
+ .system {
+  display: flex;
+  gap: 80px;
+  padding-top: 3rem;
+ }
+ .system div {
+  flex-basis: 50%;
+ }
+ .system-benefits p {
+    display: flex;
+    align-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-radius: 3px 10px;
+    padding: 10px;
+    background-color: rgba(167, 137, 81, 0.2);
+ }
+ .benefit-no {
+    margin-right: 5px;
+    border-radius: 10px 3px;
+    font-weight: 600;
+    padding: 5px;
+    background-color: rgba(167, 137, 81, 0.7);
+    color: #ffffff;
+ }
+    /* Mobile Devices - Phones/Tablets */
+
+@media only screen and (max-width: 768px){
+  .logo img {
+    height: 60px;
+}
+
+.nav-links li a {
+  font-size: 2rem;
+}
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+  .menu-toggle, .bar {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .menu-bar{
+    position: fixed;
+    background: #131418;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.menu-bar.open{
+    top: 70px;
+    right: 0;
+    background: #FFFFFF;
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+}
+.nav-links {
+  align-items: center;
+  flex-direction: column;
+  margin-right: 0;
+}
+.nav-links li{
+  margin-right: 0;
+  padding: 20px 10px;
+}
+.menu-bar li{
+    opacity: 0;
+}
+.menu-bar li:nth-child(1){
+    transition: all 0.5s ease 0.2s;
+}
+.menu-bar li:nth-child(2){
+    transition: all 0.5s ease 0.4s;
+}
+.menu-bar li:nth-child(3){
+    transition: all 0.5s ease 0.6s;
+}
+.menu-bar li:nth-child(4){
+    transition: all 0.5s ease 0.7s;
+}
+.menu-bar li:nth-child(5){
+    transition: all 0.5s ease 0.8s;
+}
+.menu-bar li:nth-child(6){
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+}
+.menu-bar li:nth-child(7){
+    transition: all 0.5s ease 1s;
+    margin: 0;
+}
+li.fade{
+    opacity: 1;
+}
+.quote-button {
+  margin-right: 0;
+  font-size: 0.7rem;
+}
+ .header h1 {
+  font-size: 2rem;
+ }
+
+ .header p {
+  font-size: 0.8rem;
+ }
+
+ .more-info {
+  flex-direction: column;
+ }
+ .mission, 
+ .vision {
+  padding-right: 0;
+ }
+
+.vision{
+  margin-top: 1.5rem;
+}
+#services,
+#our-values {
+  padding: 2rem;
+}
+.services-container,
+.system {
+  flex-direction: column; 
+}
+.service-card {
+  margin-bottom: 20px;
+}
+
+.contact-container {
+  flex-direction: column;
+}
+
+.footer-content {
+  flex-direction: column;
+}
+
+.step {
+  flex-basis: 100%;
+}
+.head-page h1 {
+  font-size: 2rem;
+ }
+ .value-item,
+ .solution {
+  flex: 0 1 40%;
+ }
+
+ 
+}
+
+@media screen and (max-width: 480px) {
+  p ,
+  .header-content p,
+  .head-page p,
+  .why-us-list p{
+    font-size: 0.7rem;
+  }
+  .header-content h1,
+  .header-content p {
+    margin-bottom: 1rem;
+  }
+ .head-page h1,
+ .header-content h1,
+ #about-us h1,
+ #services h1,
+ #working-process h1{
+  font-size: 1.3rem;
+ }
+ #about-us,
+ #why-us {
+  padding: 2rem;
+ }
+ #services,
+ #our-values,
+ #working-process {
+  padding: 2rem 1.5rem;
+ }
+
+ .process-steps {
+  padding: 10px;
+ }
+
+.values-container {
+  flex-direction: column;
+  align-content: center;
+}
+.value-item {
+  max-width: 70%;
+}
+.solution {
+  flex-basis: 100%;
+}
+.solution h3 {
+  font-size: 1rem;
+}
+.solution-system{
+  padding: 2rem 1.5rem 0;
+}
+.contact-details {
+  padding: 0 1rem;
+}
+.system {
+  padding-top: 1rem;
+  gap: 2rem;
+}
+#contact-us {
+  padding:2rem 1rem;
+}
+#join-us {
+  padding: 3rem 2rem;
+}
+}
